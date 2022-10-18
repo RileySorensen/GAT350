@@ -17,7 +17,7 @@ namespace neu
 		Actor(const Actor& other);
 		Actor(const Transform& transform) : m_transform{ transform } {}
 
-		CLASS_DECLARATION(Actor)
+		CLASS_DECLARATION(Actor);
 
 		virtual void Initialize() override;
 		virtual void Update() override;

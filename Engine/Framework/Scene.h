@@ -18,7 +18,7 @@ namespace neu
 		Scene(const Scene& other) {}
 		~Scene() = default;
 
-		CLASS_DECLARATION(Scene)
+		CLASS_DECLARATION(Scene);
 
 		void Initialize() override;
 		void Update() override;
