@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "Resource/Resource.h"
 #include <list>
 #include <memory>
 
@@ -10,13 +11,15 @@ namespace neu
 	class Renderer;
 	class Game;
 
-	class Scene : public GameObject, public ISerializable
+	class Scene : public GameObject, public ISerializable, public Resource
 	{
 	public:
 		Scene() = default;
 		Scene(Game* game) : m_game{ game } {}
 		Scene(const Scene& other) {}
 		~Scene() = default;
+
+		virtual bool Create(std::string name, ...);
 
 		CLASS_DECLARATION(Scene);
 

@@ -59,20 +59,10 @@ int main(int argc, char**argv)
 	neu::g_renderer.CreateWindow("Neumont", 800, 600);
 	LOG("Window Created . . .");
 
-	auto scene = std::make_unique<neu::Scene>();
+	auto scene = neu::g_resources.Get<neu::Scene>("Scenes/basic.scn");
 
-	rapidjson::Document document;
-	bool success = neu::json::Load("scenes/basic.scn", document);
-	if (!success)
-	{
-		LOG("Error Loading Scene File %s.", "scenes/basic.scn");
-	}
-	else
-	{
-		scene->Read(document);
-		scene->Initialize();
-	}
 	
+
 
 	//std::shared_ptr<neu::VertexBuffer> vb = neu::g_resources.Get<neu::VertexBuffer>("box");
 	//vb->CreateVertexBuffer(sizeof(vertices), 36, vertices);
