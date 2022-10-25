@@ -1,0 +1,4 @@
+{
+"program":"shaders/basic.prog", 
+"texture":"textures/ogre_diffuse.bmp"
+}
