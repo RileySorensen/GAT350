@@ -1,4 +1,4 @@
-#include "Renderer.h"
+	#include "Renderer.h"
 #include "Texture.h"
 #include "Math/MathUtils.h"
 #include "Math/Transform.h"
@@ -27,14 +27,15 @@ namespace neu
 		IMG_Quit();
 	}
 
-	void Renderer::CreateWindow(const char* name, int width, int height, bool fullscreen)
+	void Renderer::CreateWindow(const std::string& name, int width, int height, bool fullscreen)
 	{
-		m_width = width;
-		m_height = height;
+		this->width = width;
+		this->height = height;
+		this->fullscreen = fullscreen;
 
 		int flags = (fullscreen) ? SDL_WINDOW_FULLSCREEN : (SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
-		m_window = SDL_CreateWindow(name, 100, 100, width, height, SDL_WINDOW_OPENGL
+		m_window = SDL_CreateWindow(name.c_str(), 100, 100, width, height, SDL_WINDOW_OPENGL
 			| flags);
 
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
@@ -55,7 +56,7 @@ namespace neu
 
 	void Renderer::BeginFrame()
 	{
-		glClearColor(0, 0, 0, 1);
+		glClearColor(clear_color.r, clear_color.g, clear_color.b, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
@@ -88,9 +89,19 @@ namespace neu
 		SDL_RenderDrawPointF(m_renderer, v.x, v.y);
 	}
 
+	void Renderer::SetViewport(int x, int y, int width, int height)
+	{
+		glViewport(x,y,width,height);
+	}
+
+	void Renderer::RestoreViewport()
+	{
+		glViewport(0,0,width, height);
+	}
+
 	void Renderer::Draw(std::shared_ptr<Texture> texture, const Vector2& position, float angle, const Vector2& scale, const Vector2& registration)
 	{
-		Vector2 size = texture->GetSize();
+		/*glm size = texture->GetSize();
 		size = size * scale;
 
 		Vector2 origin = size * registration;
@@ -102,7 +113,7 @@ namespace neu
 		dest.w = (int)(size.x);
 		dest.h = (int)(size.y);
 
-		SDL_Point center{ (int)origin.x, (int)origin.y };
+		SDL_Point center{ (int)origin.x, (int)origin.y };*/
 				
 		//SDL_RenderCopyEx(m_renderer, texture->m_texture, nullptr, &dest, angle, &center, SDL_FLIP_NONE);
 	}

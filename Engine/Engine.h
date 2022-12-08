@@ -2,6 +2,7 @@
 
 #include "Serialization/Json.h"
 #include "Renderer/Model.h"
+#include "Renderer/GUI.h"
 
 #include "Core/Memory.h"
 #include "Core/File.h"
@@ -31,6 +32,7 @@
 #include "Components/CharacterComponent.h"
 #include "Components/CameraComponent.h"
 #include "Components/CameraController.h"
+#include "Components/LightComponent.h"
 
 #include "Input/InputSystem.h"
 #include "Audio/AudioSystem.h"
@@ -45,6 +47,8 @@
 #include "Renderer/Program.h"
 #include "Renderer/Material.h"
 #include "Renderer/VertexBuffer.h"
+#include "Renderer/Cubemap.h"
+#include "Renderer/Framebuffer.h"
 
 #include "glad/glad.h"
 
@@ -62,12 +66,14 @@ namespace neu
 	extern ResourceManager g_resources;
 	extern PhysicsSystem g_physicsSystem;
 	extern EventManager g_eventManager;
+	extern GUI g_gui;
 	
 	class Engine : public Singleton<Engine>
 	{
 	public:
 
 		void Initialize();
+
 		void Shutdown();
 
 		void Update();

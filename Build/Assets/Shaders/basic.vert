@@ -17,5 +17,5 @@ void main()
 	texcoord = vtexcoord;
 
 	vec4 tposition = mvp * vec4(vposition, 1.0);
-	gl_Position = tposition; //vec4(vposition * scale, 1.0);
+	gl_Position = tposition;
 }

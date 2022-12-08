@@ -1,0 +1,122 @@
+{
+  "clear_color": [ 0, 0, 0 ],
+  "ambeint_color": [0.2,0.2,0.2],
+  "actors": [
+    {
+      "type": "Actor",
+      "name": "squirrel",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.25,
+          0.25,
+          0.25
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/squirrel.glb",
+          "material_name": "Material/ogre.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light",
+      "transform": {
+        "position": [
+          5,
+          5,
+          5
+
+        ]
+      },
+      "rotation": [
+        0,
+        85,
+        0
+      ],
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            1.0,
+            0,
+            0
+          ],
+          "type_name": "point",
+          "cutoff": 180.0,
+          "exponent": 15.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light2",
+      "transform": {
+        "position": [
+          -5,
+          5,
+          5
+
+        ]
+      },
+      "rotation": [
+        0,
+        85,
+        0
+      ],
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            0,
+            1.0,
+            0
+          ],
+          "type_name": "point",
+          "cutoff": 180.0,
+          "exponent": 15.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Camera",
+      "transform": {
+        "position": [
+          0,
+          0,
+          2
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "CameraComponent",
+          "fov": 45,
+          "near": 0.1,
+          "far": 100
+        },
+        {
+          "type": "CameraController",
+          "speed": 4
+        }
+      ]
+    }
+  ]
+}

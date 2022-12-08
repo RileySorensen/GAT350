@@ -6,13 +6,13 @@
 
 namespace neu
 {
-	bool Scene::Create(std::string name, ...)
+	bool Scene::Create(std::string filename, ...)
 	{
 		rapidjson::Document document;
-		bool success = neu::json::Load("scenes/basic.scn", document);
+		bool success = neu::json::Load(filename, document);
 		if (!success)
 		{
-			LOG("Error Loading Scene File %s.", "scenes/basic.scn");
+			LOG("Error Loading Scene File %s.", filename);
 			return false;
 		}
 		else
@@ -44,7 +44,55 @@ namespace neu
 		}
 	}
 
-	void Scene::Draw(Renderer& renderer)
+	void Scene::PreRender(Renderer& renderer)
+	{
+		CameraComponent* camera = nullptr;
+		for (auto& actor : m_actors)
+		{
+			if (!actor->IsActive()) continue;
+
+			auto component = actor->GetComponent<CameraComponent>();
+			if(component)
+			{
+				camera = component;
+				break;
+			}
+		}
+
+		// get light components 
+		std::vector<LightComponent*> lights;
+		for (auto& actor : m_actors)
+		{
+			if (!actor->IsActive()) continue;
+
+			auto component = actor->GetComponent<LightComponent>();
+			if(component)
+			{
+				lights.push_back(component);
+			}
+		}
+
+		// get all shader programs in the resource system 
+		auto programs = g_resources.Get<Program>();
+		// set all shader programs camera and lights uniforms 
+		for (auto& program : programs)
+		{
+			// set camera in shader program 
+			camera->SetProgram(program);
+
+			// set lights in shader program 
+			int index = 0;
+			for (auto light : lights)
+			{
+				light->setProgram(program, index++);
+			}
+
+			program->SetUniform("light_count", index);
+			program->SetUniform("ambient_color", g_renderer.ambient_color);
+		}
+	}
+
+	void Scene::Render(Renderer& renderer)
 	{
 		auto camera = GetActorFromName("Camera");
 		if (camera)
@@ -81,6 +129,9 @@ namespace neu
 
 	bool Scene::Read(const rapidjson::Value& value)
 	{
+		READ_NAME_DATA(value, "clear_color", g_renderer.clear_color);
+		READ_NAME_DATA(value, "ambient_color", g_renderer.ambient_color);
+
 		if (!value.HasMember("actors") || !value["actors"].IsArray())
 		{
 			return false;

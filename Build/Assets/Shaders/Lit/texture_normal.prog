@@ -1,0 +1,4 @@
+{
+	"vertex_shader": "shaders/fx/toom.vert",
+	"fragment_shader": "shaders/fx/toom.frag"
+}

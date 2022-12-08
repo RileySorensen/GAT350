@@ -1,0 +1,16 @@
+{
+"program":"shaders/lit/texture.prog",
+  "textures": [
+    "textures/fish_diffuse.png",
+    "textures/fish_normal.png"
+  ],
+    "color":
+    [
+      1,
+      1,
+      1
+    ],
+    "shininess"
+    :
+    256
+}

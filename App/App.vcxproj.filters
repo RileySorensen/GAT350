@@ -21,5 +21,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Build\Assets\Scenes\basic.scn" />
+    <None Include="..\Build\Assets\Shaders\basic.frag" />
+    <None Include="..\Build\Assets\Shaders\basic.prog" />
+    <None Include="..\Build\Assets\Shaders\basic.vert" />
+    <None Include="..\Build\Assets\Material\ogre.mtrl" />
+    <None Include="..\Build\Assets\Shaders\basic.lit.frag" />
+    <None Include="..\Build\Assets\Shaders\basic.lit.prog" />
+    <None Include="..\Build\Assets\Shaders\basic.lit.vert" />
+    <None Include="..\Build\Assets\Scenes\basic.lit.scn" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.frag" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.prog" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.vert" />
+    <None Include="..\Build\Assets\Material\box.mtrl" />
+    <None Include="..\Build\Assets\Scenes\texture.scn" />
+    <None Include="..\Build\Assets\Material\multi.mtrl" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.frag" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.prog" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.vert" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.frag" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.prog" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.vert" />
+    <None Include="..\Build\Assets\Shaders\Fx\toom.frag" />
+    <None Include="..\Build\Assets\Shaders\Fx\toom.prog" />
+    <None Include="..\Build\Assets\Shaders\Fx\toom.vert" />
+    <None Include="..\Build\Assets\Scenes\cubemap.scn" />
+    <None Include="..\Build\Assets\Material\skybox.mtrl" />
+    <None Include="..\Build\Assets\Shaders\Fx\skybox.frag" />
+    <None Include="..\Build\Assets\Shaders\Fx\skybox.prog" />
+    <None Include="..\Build\Assets\Shaders\Fx\skybox.vert" />
+    <None Include="..\Build\Assets\Shaders\Fx\reflection.frag" />
+    <None Include="..\Build\Assets\Shaders\Fx\reflection.prog" />
+    <None Include="..\Build\Assets\Shaders\Fx\reflection.vert" />
+    <None Include="..\Build\Assets\Material\reflection.mtrl" />
+    <None Include="..\Build\Assets\Shaders\Fx\refraction.frag" />
+    <None Include="..\Build\Assets\Shaders\Fx\refraction.prog" />
+    <None Include="..\Build\Assets\Shaders\Fx\refraction.vert" />
+    <None Include="..\Build\Assets\Material\refraction.mtrl" />
+    <None Include="..\Build\Assets\Scenes\rtt.scn" />
+    <None Include="..\Build\Assets\Material\RTT.mtrl" />
+    <None Include="..\Build\Assets\Shaders\unLit\color.frag" />
+    <None Include="..\Build\Assets\Shaders\unLit\color.prog" />
+    <None Include="..\Build\Assets\Shaders\unLit\color.vert" />
+    <None Include="..\Build\Assets\Shaders\unLit\texture.frag" />
+    <None Include="..\Build\Assets\Shaders\unLit\texture.prog" />
+    <None Include="..\Build\Assets\Shaders\unLit\texture.vert" />
+    <None Include="..\Build\Assets\Scenes\postprocess.scn" />
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.prog" />
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.vert" />
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.frag" />
+    <None Include="..\Build\Assets\Material\postprocess.mtrl" />
+    <None Include="..\Build\Assets\Material\fish.mtrl" />
+    <None Include="..\Build\Assets\Material\urchin.mtrl" />
+    <None Include="..\Build\Assets\Material\octopus.mtrl" />
   </ItemGroup>
 </Project>

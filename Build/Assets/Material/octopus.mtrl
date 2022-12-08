@@ -1,0 +1,16 @@
+{
+"program":"shaders/lit/texture.prog",
+  "textures": [
+    "textures/octopus_diffuse.png",
+    "textures/octopus_normal.png"
+  ],
+    "color":
+    [
+      1,
+      1,
+      1
+    ],
+    "shininess"
+    :
+    256
+}

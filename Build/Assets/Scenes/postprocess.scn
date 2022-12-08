@@ -1,0 +1,219 @@
+{
+  "clear_color": [ 0, 0, 0 ],
+  "ambeint_color": [ 0.2, 0.2, 0.2 ],
+  "actors": [
+    {
+      "type": "Actor",
+      "name": "Skybox",
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/cube.obj",
+          "material_name": "Material/skybox.mtrl",
+          "depth_test": false
+
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "squirrel",
+      "transform": {
+        "position": [
+         -5,
+          0,
+          0
+        ],
+        "scale": [
+          0.25,
+          0.25,
+          0.25
+        ],
+        "rotation": [
+          0,
+          45,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/fish.glb",
+          "material_name": "Material/fish.mtrl",
+          "depth_test": true
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "octopus",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.25,
+          0.25,
+          0.25
+        ],
+        "rotation": [
+          0,
+          45,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/octopus.glb",
+          "material_name": "Material/octopus.mtrl",
+          "depth_test": true
+
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "urchin",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "rotation": [
+          0,
+          45,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/shark.glb",
+          "material_name": "Material/urchin.mtrl",
+          "depth_test": true
+
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light",
+      "transform": {
+        "position": [
+          5,
+          -1,
+          0
+
+        ]
+      },
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "type_name": "direct",
+          "cutoff": 180.0,
+          "exponent": 15.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light2",
+      "transform": {
+        "position": [
+          -5,
+          5,
+          5
+
+        ]
+      },
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "type_name": "direct",
+          "cutoff": 180.0,
+          "exponent": 15.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Camera",
+      "transform": {
+        "position": [
+          0,
+          0,
+          2
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "CameraComponent",
+          "fov": 45,
+          "near": 0.1,
+          "far": 100
+        },
+        {
+          "type": "CameraController",
+          "speed": 4
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "PostProcess",
+      "transform": {
+        "position": [
+          3,
+          2,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/quad.obj",
+          "material_name": "Material/postprocess.mtrl"
+        }
+      ]
+    }
+  ]
+}

@@ -12,9 +12,6 @@ namespace neu
 	{
 		bool Load(const std::string& filename, rapidjson::Document& document)
 		{
-			// !! create a std::ifstream object
-			// !! check if it is open, if not use LOG to print error and return false
-			// !! https://riptutorial.com/cplusplus/example/1625/opening-a-file
 			std::ifstream stream(filename);
 			if (stream.is_open() == false)
 			{

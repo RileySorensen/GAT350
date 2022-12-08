@@ -1,0 +1,12 @@
+{
+"program":"shaders/fx/skybox.prog",
+  "cubemap": "textures/NissiBeach/",
+  "cubemap_extension": ".jpg",
+    "color":
+    [
+      1,
+      1,
+      1
+    ],
+    "shininess":256
+}

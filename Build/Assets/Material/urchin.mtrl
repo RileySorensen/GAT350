@@ -1,0 +1,16 @@
+{
+"program":"shaders/lit/texture.prog",
+  "textures": [
+    "textures/shark_diffuse.png",
+    "textures/shark_normal.png"
+  ],
+    "color":
+    [
+      1,
+      1,
+      1
+    ],
+    "shininess"
+    :
+    256
+}
